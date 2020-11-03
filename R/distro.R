@@ -10,6 +10,8 @@
 #' Not all fields are guaranteed to be defined on all systems. On non-Linux
 #' systems, the function returns `NULL`.
 #' @export
+#' @examples
+#' distro()
 distro <- function() {
   out <- lsb_release()
   if (is.null(out)) {
@@ -93,5 +95,8 @@ system_release <- function() {
   }
 }
 
-#' @importFrom utils head
-read_system_release <- function() utils::head(readLines("/etc/system-release"), 1)
+read_system_release <- function() {
+  if (file.exists("/etc/system-release")) {
+    readLines("/etc/system-release")[1]
+  }
+}

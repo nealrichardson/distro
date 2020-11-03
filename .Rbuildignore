@@ -1,3 +1,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^\.github$
+^distro_.*.tar.gz$
+^cran-comments\.md$
+^revdep
+^.*\.Rcheck.*$

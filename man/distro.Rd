@@ -22,3 +22,6 @@ systems, the function returns \code{NULL}.
 \description{
 Get info on the system's Linux distribution
 }
+\examples{
+distro()
+}
