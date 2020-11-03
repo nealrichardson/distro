@@ -12,7 +12,9 @@ Description: In order to provide unified access to Linux distribution details
 License: Apache License (>= 2.0)
 Encoding: UTF-8
 LazyData: true
-Suggests: 
+Suggests:
     testthat (>= 2.1.0)
 RoxygenNote: 7.1.0.9000
 Roxygen: list(markdown = TRUE)
+URL: https://enpiar.com/distro/, https://github.com/nealrichardson/distro
+BugReports: https://github.com/nealrichardson/distro/issues

@@ -4,3 +4,4 @@
 .Ruserdata
 distro_*.tar.gz
 *Rcheck
+docs/*
