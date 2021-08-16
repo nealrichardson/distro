@@ -7,7 +7,7 @@ with_mock_lsb <- function(mock, expr) {
 }
 
 debian_lsb <- list(
-  "-cs" = "bullseye",
+  "-cs" = "bookworm",
   "-is" = "Debian",
   "-rs" = "testing"
 )
@@ -32,8 +32,8 @@ fedora_lsb <- list(
 
 test_that("lsb_release", {
   with_mock_lsb(debian_lsb, {
-    expect_equal(lsb_release(), list(id="Debian", version="testing", codename="bullseye"))
-    expect_equal(distro(), list(id="debian", version="testing", codename="bullseye", short_version="11"))
+    expect_equal(lsb_release(), list(id="Debian", version="testing", codename="bookworm"))
+    expect_equal(distro(), list(id="debian", version="testing", codename="bookworm", short_version="12"))
   })
 
   expect_equal(
