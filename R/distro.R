@@ -28,9 +28,10 @@ distro <- function() {
   if (is.null(out$version)) {
     if (grepl("bullseye", out$codename)) {
       out$short_version <- "11"
-    else if (grepl("bookworm", out$codename)) {
-    # debian unstable doesn't include a number but we can map from pretty name
-    out$short_version <- "12"
+    } else if (grepl("bookworm", out$codename)) {
+      # debian unstable doesn't include a number but we can map from pretty name
+      out$short_version <- "12"
+    }
   } else if (out$id == "ubuntu") {
     # Keep major.minor version
     out$short_version <- sub('^"?([0-9]+\\.[0-9]+).*"?.*$', "\\1", out$version)
@@ -70,7 +71,7 @@ os_release <- function() {
       out$codename <- vals[["VERSION_CODENAME"]]
     } else {
       # This probably isn't right, maybe could extract codename from pretty name?
-      out$codename = vals[["PRETTY_NAME"]]
+      out$codename <- vals[["PRETTY_NAME"]]
     }
     out
   } else {

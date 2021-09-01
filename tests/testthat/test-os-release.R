@@ -17,6 +17,15 @@ test_that("os_release", {
     )
   )
   expect_equal(
+    with_mock_os_release("debian-bullseye-old", distro()),
+    list(
+      id = "debian",
+      version = NULL,
+      codename = "Debian GNU/Linux bullseye/sid",
+      short_version = "11"
+    )
+  )
+  expect_equal(
     with_mock_os_release("ubuntu-xenial", distro()),
     list(
       id = "ubuntu",
@@ -44,4 +53,3 @@ test_that("os_release", {
     )
   )
 })
-

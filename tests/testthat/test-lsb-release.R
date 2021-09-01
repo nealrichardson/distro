@@ -32,23 +32,22 @@ fedora_lsb <- list(
 
 test_that("lsb_release", {
   with_mock_lsb(debian_lsb, {
-    expect_equal(lsb_release(), list(id="Debian", version="testing", codename="bookworm"))
-    expect_equal(distro(), list(id="debian", version="testing", codename="bookworm", short_version="12"))
+    expect_equal(lsb_release(), list(id = "Debian", version = "testing", codename = "bookworm"))
+    expect_equal(distro(), list(id = "debian", version = "testing", codename = "bookworm", short_version = "testing"))
   })
 
   expect_equal(
     with_mock_lsb(ubuntu_lsb, distro()),
-    list(id="ubuntu", version="16.04", codename="xenial", short_version="16.04")
+    list(id = "ubuntu", version = "16.04", codename = "xenial", short_version = "16.04")
   )
 
   expect_equal(
     with_mock_lsb(centos_lsb, distro()),
-    list(id="centos", version="7.7.1908", codename="foo", short_version="7")
+    list(id = "centos", version = "7.7.1908", codename = "foo", short_version = "7")
   )
 
   expect_equal(
     with_mock_lsb(fedora_lsb, distro()),
-    list(id="fedora", version="31", codename="ThirtyOne", short_version="31")
+    list(id = "fedora", version = "31", codename = "ThirtyOne", short_version = "31")
   )
 })
-
