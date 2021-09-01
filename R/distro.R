@@ -25,7 +25,7 @@ distro <- function() {
   }
 
   out$id <- tolower(out$id)
-  if (is.null(out$version)) {
+  if (is.null(out$version) || out$version == "testing") {
     if (grepl("bullseye", out$codename)) {
       out$short_version <- "11"
     } else if (grepl("bookworm", out$codename)) {
