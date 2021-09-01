@@ -25,7 +25,10 @@ distro <- function() {
   }
 
   out$id <- tolower(out$id)
-  if (grepl("bookworm", out$codename)) {
+  if (is.null(out$version)) {
+    if (grepl("bullseye", out$codename)) {
+      out$short_version <- "11"
+    else if (grepl("bookworm", out$codename)) {
     # debian unstable doesn't include a number but we can map from pretty name
     out$short_version <- "12"
   } else if (out$id == "ubuntu") {
