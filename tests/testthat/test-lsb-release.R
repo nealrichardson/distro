@@ -33,7 +33,7 @@ fedora_lsb <- list(
 test_that("lsb_release", {
   with_mock_lsb(debian_lsb, {
     expect_equal(lsb_release(), list(id = "Debian", version = "testing", codename = "bookworm"))
-    expect_equal(distro(), list(id = "debian", version = "testing", codename = "bookworm", short_version = "testing"))
+    expect_equal(distro(), list(id = "debian", version = "testing", codename = "bookworm", short_version = "12"))
   })
 
   expect_equal(
