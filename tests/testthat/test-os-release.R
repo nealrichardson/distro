@@ -8,19 +8,31 @@ with_mock_os_release <- function(file, expr) {
 
 test_that("os_release", {
   expect_equal(
-    with_mock_os_release("debian-bookworm", distro()),
+    with_mock_os_release("debian-bookworm-testing", distro()),
     list(
       id = "debian",
       version = NULL,
+      # Codename should be bookworm right?
       codename = "Debian GNU/Linux bookworm/sid",
       short_version = "12"
     )
   )
   expect_equal(
-    with_mock_os_release("debian-bullseye-old", distro()),
+    with_mock_os_release("debian-bullseye-testing", distro()),
     list(
       id = "debian",
       version = NULL,
+      # Codename should be bullseye right?
+      codename = "Debian GNU/Linux bullseye/sid",
+      short_version = "11"
+    )
+  )
+  expect_equal(
+    with_mock_os_release("debian-bullseye", distro()),
+    list(
+      id = "debian",
+      version = NULL,
+      # Codename should be bullseye right?
       codename = "Debian GNU/Linux bullseye/sid",
       short_version = "11"
     )
