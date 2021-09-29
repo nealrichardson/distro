@@ -54,8 +54,10 @@ test_that("lsb_release", {
     expect_equal(distro(), list(id = "debian", version = "testing", codename = "bookworm", short_version = "12"))
   })
 
+  # if it codename is sid, this is always the codename of the latest unstable
+  # version, and we can't map to the short version number as we don't know it
   with_mock_lsb(debian_bookworm_unstable, {
-    expect_equal(distro(), list(id = "debian", version = "unstable", codename = "sid", short_version = "12"))
+    expect_equal(distro(), list(id = "debian", version = "unstable", codename = "sid"))
   })
 
   with_mock_lsb(debian_bullseye_testing, {
@@ -63,7 +65,7 @@ test_that("lsb_release", {
   })
 
   with_mock_lsb(debian_bullseye, {
-    expect_equal(distro(), list(id = "debian", version = "testing", codename = "bullseye", short_version = "11"))
+    expect_equal(distro(), list(id = "debian", version = "11", codename = "bullseye", short_version = "11"))
   })
 
   expect_equal(
