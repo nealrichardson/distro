@@ -31,9 +31,9 @@ test_that("os_release", {
     with_mock_os_release("debian-bullseye", distro()),
     list(
       id = "debian",
-      version = NULL,
+      version = "11",
       # Codename should be bullseye right?
-      codename = "Debian GNU/Linux bullseye/sid",
+      codename = "bullseye",
       short_version = "11"
     )
   )
