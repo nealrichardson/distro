@@ -30,7 +30,6 @@ distro <- function() {
     if (grepl("bullseye", out$codename)) {
       out$short_version <- "11"
     } else if (grepl("bookworm", out$codename)) {
-      # debian unstable & testing don't include numbers but we can map from pretty name
       out$short_version <- "12"
     }
   } else if (out$id == "ubuntu") {
