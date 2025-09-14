@@ -1,8 +1,10 @@
 with_mock_os_release <- function(file, expr) {
-  with_mock(
-    `distro:::have_lsb_release` = function() FALSE, # Make sure we don't call lsb_release
-    `distro:::read_os_release` = function() readLines(test_path(file.path("os-release", file))),
-    eval.parent(expr)
+  with_mocked_bindings(
+    expr,
+    have_lsb_release = function() FALSE, # Make sure we don't call lsb_release
+    read_os_release = function() {
+      readLines(test_path(file.path("os-release", file)))
+    }
   )
 }
 
