@@ -1,7 +1,7 @@
 Package: distro
 Type: Package
 Title: Linux Distribution Properties
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(
     person("Neal", "Richardson", email = "neal.p.richardson@gmail.com", role = c("aut", "cre"))
   )
@@ -11,7 +11,6 @@ Description: In order to provide unified access to Linux distribution details
     'Python' package of the same name.
 License: Apache License (>= 2.0)
 Encoding: UTF-8
-LazyData: true
 Suggests:
     testthat (>= 2.1.0)
 RoxygenNote: 7.1.0.9000
